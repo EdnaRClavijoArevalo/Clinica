@@ -36,7 +36,7 @@ public class InicioController {
         controllers.add(new ControllerListPresenter("Servicio Prestado", "/servicioprestado "));
         controllers.add(new ControllerListPresenter("Tipo Persona", "/tipopersona "));
         controllers.add(new ControllerListPresenter("Tipo Propiedad", "/tipopropiedad "));
-        controllers.add(new ControllerListPresenter("Tipo Seguro", "/tiposeguro "));
+        controllers.add(new ControllerListPresenter("Tipo Seguro Salud", "/tiposegurosalud "));
         controllers.add(new ControllerListPresenter("Visita Medico", "/visitamedico "));
         return HttpResponse.ok(CollectionUtils.mapOf(
                 "controllers", controllers
