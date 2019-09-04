@@ -51,12 +51,14 @@ public class PersonaController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<PersonaEntity> create(@Body final PersonaForm creating) {
     boolean created = this.personaService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<PersonaEntity> update(@Body final PersonaForm updating) {
     boolean updated = this.personaService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

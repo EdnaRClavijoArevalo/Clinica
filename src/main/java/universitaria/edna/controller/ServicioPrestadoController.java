@@ -51,12 +51,14 @@ public class ServicioPrestadoController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<ServicioPrestadoEntity> create(@Body final ServicioPrestadoForm creating) {
     boolean created = this.servicioPrestadoService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<ServicioPrestadoEntity> update(@Body final ServicioPrestadoForm updating) {
     boolean updated = this.servicioPrestadoService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

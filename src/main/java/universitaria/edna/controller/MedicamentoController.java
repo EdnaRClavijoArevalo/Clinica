@@ -51,12 +51,14 @@ public class MedicamentoController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<MedicamentoEntity> create(@Body final MedicamentoForm creating) {
     boolean created = this.medicamentoService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<MedicamentoEntity> update(@Body final MedicamentoForm updating) {
     boolean updated = this.medicamentoService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

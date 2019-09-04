@@ -51,12 +51,14 @@ public class MaquinariaExamenController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<MaquinariaExamenEntity> create(@Body final MaquinariaExamenForm creating) {
     boolean created = this.maquinariaExamenService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<MaquinariaExamenEntity> update(@Body final MaquinariaExamenForm updating) {
     boolean updated = this.maquinariaExamenService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

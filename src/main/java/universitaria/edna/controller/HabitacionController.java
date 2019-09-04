@@ -51,12 +51,14 @@ public class HabitacionController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<HabitacionEntity> create(@Body final HabitacionForm creating) {
     boolean created = this.habitacionService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<HabitacionEntity> update(@Body final HabitacionForm updating) {
     boolean updated = this.habitacionService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

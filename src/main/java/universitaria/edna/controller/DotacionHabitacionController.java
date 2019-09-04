@@ -51,12 +51,14 @@ public class DotacionHabitacionController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<DotacionHabitacionEntity> create(@Body final DotacionHabitacionForm creating) {
     boolean created = this.dotacionHabitacionService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<DotacionHabitacionEntity> update(@Body final DotacionHabitacionForm updating) {
     boolean updated = this.dotacionHabitacionService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

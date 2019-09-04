@@ -51,12 +51,14 @@ public class DispositivoMedicoController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<DispositivoMedicoEntity> create(@Body final DispositivoMedicoForm creating) {
     boolean created = this.dispositivoMedicoService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<DispositivoMedicoEntity> update(@Body final DispositivoMedicoForm updating) {
     boolean updated = this.dispositivoMedicoService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

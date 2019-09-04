@@ -51,12 +51,14 @@ public class EdificioController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<EdificioEntity> create(@Body final EdificioForm creating) {
     boolean created = this.edificioService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<EdificioEntity> update(@Body final EdificioForm updating) {
     boolean updated = this.edificioService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

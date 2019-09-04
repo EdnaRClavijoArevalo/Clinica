@@ -51,12 +51,14 @@ public class CaracteristicaPersonaController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<CaracteristicaPersonaEntity> create(@Body final CaracteristicaPersonaForm creating) {
     boolean created = this.caracteristicaPersonaService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<CaracteristicaPersonaEntity> update(@Body final CaracteristicaPersonaForm updating) {
     boolean updated = this.caracteristicaPersonaService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 

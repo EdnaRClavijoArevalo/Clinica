@@ -51,12 +51,14 @@ public class TipoPersonaController {
   @Post(value = "/save", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<TipoPersonaEntity> create(@Body final TipoPersonaForm creating) {
     boolean created = this.tipoPersonaService.save(creating.entity());
+    if (!created) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
   @Put(value = "/update", consumes = MediaType.APPLICATION_JSON)
   public HttpResponse<TipoPersonaEntity> update(@Body final TipoPersonaForm updating) {
     boolean updated = this.tipoPersonaService.update(updating.entity());
+    if (!updated) return HttpResponse.badRequest();
     return HttpResponse.ok();
   }
 
