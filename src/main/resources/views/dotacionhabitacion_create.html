@@ -6,9 +6,11 @@
 </head>
 <body class="container">
 <section>
-    <a href="/dotacionhabitacion">Volver a lista</a>
+    <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
+    <a href="/dotacionhabitacion" class="btn btn-sm btn-outline-dark">Volver a lista</a>
 </section>
 
+<h1>Crear Registro en Tabla: dotacionHabitacion</h1>
 <form action="#" name="entityForm" th:action="@{/dotacionhabitacion/save}" th:object="${entity}" method="post">
 <div class="form-group">
     <p>
@@ -36,8 +38,8 @@
 </div>
 
 <p>
-    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
-    <input type="reset" value="Reset">
+    <input type="button" value="Guardar" onclick="saveEntity(entityForm)" class="btn btn-sm btn-outline-success"/>
+    <input type="reset" value="Limpiar"  class="btn btn-sm btn-dark">
 </p>
 
 </form>
@@ -53,7 +55,7 @@
         axios.post('/dotacionhabitacion/save', entity)
             .then(function () {
                 alert('Registro creado exitosamente')
-
+                window.location.href = "/"
             }).catch(function (error) {
                 alert(error)
             }

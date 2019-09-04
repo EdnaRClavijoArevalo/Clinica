@@ -6,7 +6,8 @@
 </head>
 <body class="container">
 <section>
-    <a href="/persona/create">Crear</a>
+    <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
+    <a href="/persona/create" class="btn btn-sm btn-outline-dark">Crear</a>
 </section>
 
 <table class="table table-striped">
@@ -20,6 +21,8 @@
         <th>Email</th>
         <th>Direccion</th>
         <th>IdTipoPersona</th>
+       <th>Detalles</th>
+       <th>Borrar</th>
     </tr>
     </thead>
     <th:block th:each="entity : ${entities}">
@@ -33,7 +36,7 @@
             <td th:text="${entity.direccion}">...</td>
             <td th:text="${entity.idTipoPersona}">...</td>
             <td><a th:href="'/persona/details/' + ${entity.id}">Ver</a></td>
-            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'">Borrar</a></td>
+            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'" class="btn btn-sm btn-danger">Borrar</a></td>
         </tr>
     </th:block>
 </table>

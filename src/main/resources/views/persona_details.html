@@ -6,9 +6,11 @@
 </head>
 <body class="container">
 <section>
-    <a href="/persona">Volver a lista</a>
+    <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
+    <a href="/persona" class="btn btn-sm btn-outline-dark">Volver a lista</a>
 </section>
 
+<h1>Detalles Registro de Tabla: persona</h1>
 <form action="#" name="entityForm" th:action="@{/persona/update}" th:object="${entity}" method="post">
 <div class="form-group">
     <p>
@@ -76,7 +78,7 @@
 </div>
 
 <p>
-    <input type="button" value="Submit" onclick="updateEntity(entityForm)"/>
+    <input type="button" value="Actualizar" onclick="updateEntity(entityForm)" class="btn btn-sm btn-outline-success"/>
     <input type="reset" value="Reset">
 </p>
 

@@ -6,7 +6,8 @@
 </head>
 <body class="container">
 <section>
-    <a href="/medicamento/create">Crear</a>
+    <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
+    <a href="/medicamento/create" class="btn btn-sm btn-outline-dark">Crear</a>
 </section>
 
 <table class="table table-striped">
@@ -19,6 +20,8 @@
         <th>Referencia</th>
         <th>Posologia</th>
         <th>FechaVencimiento</th>
+       <th>Detalles</th>
+       <th>Borrar</th>
     </tr>
     </thead>
     <th:block th:each="entity : ${entities}">
@@ -31,7 +34,7 @@
             <td th:text="${entity.posologia}">...</td>
             <td th:text="${entity.fechaVencimiento}">...</td>
             <td><a th:href="'/medicamento/details/' + ${entity.id}">Ver</a></td>
-            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'">Borrar</a></td>
+            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'" class="btn btn-sm btn-danger">Borrar</a></td>
         </tr>
     </th:block>
 </table>
