@@ -1,7 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cec73a2-7414-4c33-bc1e-5a8a34766daa" name="Default Changelist" comment="" />
+    <list default="true" id="4cec73a2-7414-4c33-bc1e-5a8a34766daa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/caracteristicapersona_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/costosuministrohospitalizacion_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dispositivomedico_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/dotacionhabitacion_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/edificio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/edificio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/edificio_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/edificio_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/edificio_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/edificio_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/entidadsalud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/entidadsalud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/entidadsalud_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/entidadsalud_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/entidadsalud_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/entidadsalud_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/examenrealizado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/examenrealizado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/examenrealizado_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/examenrealizado_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/examenrealizado_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/examenrealizado_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/habitacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/habitacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/habitacion_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/habitacion_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/habitacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/habitacion_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/historiaclinica.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/historiaclinica.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/historiaclinica_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/historiaclinica_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/historiaclinica_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/historiaclinica_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ingresopaciente_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/maquinariaexamen_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamento_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamento_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamento_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamento_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/medicamentosuministrado_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/persona.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/persona.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/persona_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/persona_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/persona_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/persona_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/resultadoexamen_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospital.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospital_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospital_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospital_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospital_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/serviciohospitalizacion_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/servicioprestado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/servicioprestado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/servicioprestado_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/servicioprestado_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/servicioprestado_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/servicioprestado_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopersona.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopersona.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopersona_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopersona_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopersona_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopersona_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tipopropiedad_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/tiposegurosalud_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/visitamedico.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/visitamedico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/visitamedico_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/visitamedico_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/visitamedico_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/visitamedico_details.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +84,22 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1QLmfFwE0BpHXwm2nOpxA3gj4Xg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/views" />
@@ -30,8 +112,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\java\universitaria\edna" />
       <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\resources\views" />
+      <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\java\universitaria\edna" />
       <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\java\universitaria\edna\controller" />
       <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\java\universitaria\edna\domain" />
       <recent name="C:\Users\Paquito\workspace\universidad\clinica\src\main\java\universitaria\edna\domain\servicio_hospitalario" />
@@ -87,11 +169,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567558351648</updated>
-      <workItem from="1567558359734" duration="21194000" />
+      <workItem from="1567558359734" duration="25117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
