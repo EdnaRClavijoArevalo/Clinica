@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Habitacion</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/habitacion">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/habitacion/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idEdificio">
+            idEdificio:
+            <input class="form-control" type="text" name="idEdificio" th:value="*{idEdificio}" placeholder="Ingrese el valor de idEdificio">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="piso">
+            piso:
+            <input class="form-control" type="text" name="piso" th:value="*{piso}" placeholder="Ingrese el valor de piso">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="numero">
+            numero:
+            <input class="form-control" type="text" name="numero" th:value="*{numero}" placeholder="Ingrese el valor de numero">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="ancho">
+            ancho:
+            <input class="form-control" type="text" name="ancho" th:value="*{ancho}" placeholder="Ingrese el valor de ancho">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="largo">
+            largo:
+            <input class="form-control" type="text" name="largo" th:value="*{largo}" placeholder="Ingrese el valor de largo">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="ventanas">
+            ventanas:
+            <input class="form-control" type="text" name="ventanas" th:value="*{ventanas}" placeholder="Ingrese el valor de ventanas">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="tipo">
+            tipo:
+            <input class="form-control" type="text" name="tipo" th:value="*{tipo}" placeholder="Ingrese el valor de tipo">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="valorMetroCuadrado">
+            valorMetroCuadrado:
+            <input class="form-control" type="text" name="valorMetroCuadrado" th:value="*{valorMetroCuadrado}" placeholder="Ingrese el valor de valorMetroCuadrado">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="tipoPropiedad">
+            tipoPropiedad:
+            <input class="form-control" type="text" name="tipoPropiedad" th:value="*{tipoPropiedad}" placeholder="Ingrese el valor de tipoPropiedad">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idPropietario">
+            idPropietario:
+            <input class="form-control" type="text" name="idPropietario" th:value="*{idPropietario}" placeholder="Ingrese el valor de idPropietario">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idArrendatario">
+            idArrendatario:
+            <input class="form-control" type="text" name="idArrendatario" th:value="*{idArrendatario}" placeholder="Ingrese el valor de idArrendatario">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="valorAdministracion">
+            valorAdministracion:
+            <input class="form-control" type="text" name="valorAdministracion" th:value="*{valorAdministracion}" placeholder="Ingrese el valor de valorAdministracion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="ultimaFechaRemodelacion">
+            ultimaFechaRemodelacion:
+            <input class="form-control" type="text" name="ultimaFechaRemodelacion" th:value="*{ultimaFechaRemodelacion}" placeholder="Ingrese el valor de ultimaFechaRemodelacion">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idEdificio: entityForm.idEdificio.value,
+            piso: entityForm.piso.value,
+            numero: entityForm.numero.value,
+            ancho: entityForm.ancho.value,
+            largo: entityForm.largo.value,
+            ventanas: entityForm.ventanas.value,
+            tipo: entityForm.tipo.value,
+            valorMetroCuadrado: entityForm.valorMetroCuadrado.value,
+            tipoPropiedad: entityForm.tipoPropiedad.value,
+            idPropietario: entityForm.idPropietario.value,
+            idArrendatario: entityForm.idArrendatario.value,
+            valorAdministracion: entityForm.valorAdministracion.value,
+            ultimaFechaRemodelacion: entityForm.ultimaFechaRemodelacion.value,
+        }
+        axios.post('/habitacion/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

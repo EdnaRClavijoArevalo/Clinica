@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de MedicamentoSuministrado</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/medicamentosuministrado">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/medicamentosuministrado/update}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="id">
+            id:
+            <input class="form-control" type="text" name="id" th:value="*{id}" placeholder="Ingrese el valor de id" readonly>
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idExamenRealizado">
+            idExamenRealizado:
+            <input class="form-control" type="text" name="idExamenRealizado" th:value="*{idExamenRealizado}" placeholder="Ingrese el valor de idExamenRealizado">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idMedicamento">
+            idMedicamento:
+            <input class="form-control" type="text" name="idMedicamento" th:value="*{idMedicamento}" placeholder="Ingrese el valor de idMedicamento">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="dosis">
+            dosis:
+            <input class="form-control" type="text" name="dosis" th:value="*{dosis}" placeholder="Ingrese el valor de dosis">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="fechaMedicacion">
+            fechaMedicacion:
+            <input class="form-control" type="text" name="fechaMedicacion" th:value="*{fechaMedicacion}" placeholder="Ingrese el valor de fechaMedicacion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="cantidad">
+            cantidad:
+            <input class="form-control" type="text" name="cantidad" th:value="*{cantidad}" placeholder="Ingrese el valor de cantidad">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="updateEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function updateEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idExamenRealizado: entityForm.idExamenRealizado.value,
+            idMedicamento: entityForm.idMedicamento.value,
+            dosis: entityForm.dosis.value,
+            fechaMedicacion: entityForm.fechaMedicacion.value,
+            cantidad: entityForm.cantidad.value,
+        }
+        axios.put('/medicamentosuministrado/update', entity)
+            .then(function () {
+                alert('Registro actualizado exitosamente')
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

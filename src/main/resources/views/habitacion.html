@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Habitacion</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/habitacion/create">Crear</a>
+</section>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>IdEdificio</th>
+        <th>Piso</th>
+        <th>Numero</th>
+        <th>Ancho</th>
+        <th>Largo</th>
+        <th>Ventanas</th>
+        <th>Tipo</th>
+        <th>ValorMetroCuadrado</th>
+        <th>TipoPropiedad</th>
+        <th>IdPropietario</th>
+        <th>IdArrendatario</th>
+        <th>ValorAdministracion</th>
+        <th>UltimaFechaRemodelacion</th>
+    </tr>
+    </thead>
+    <th:block th:each="entity : ${entities}">
+        <tr>
+            <td th:text="${entity.id}">...</td>
+            <td th:text="${entity.idEdificio}">...</td>
+            <td th:text="${entity.piso}">...</td>
+            <td th:text="${entity.numero}">...</td>
+            <td th:text="${entity.ancho}">...</td>
+            <td th:text="${entity.largo}">...</td>
+            <td th:text="${entity.ventanas}">...</td>
+            <td th:text="${entity.tipo}">...</td>
+            <td th:text="${entity.valorMetroCuadrado}">...</td>
+            <td th:text="${entity.tipoPropiedad}">...</td>
+            <td th:text="${entity.idPropietario}">...</td>
+            <td th:text="${entity.idArrendatario}">...</td>
+            <td th:text="${entity.valorAdministracion}">...</td>
+            <td th:text="${entity.ultimaFechaRemodelacion}">...</td>
+            <td><a th:href="'/habitacion/details/' + ${entity.id}">Ver</a></td>
+            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'">Borrar</a></td>
+        </tr>
+    </th:block>
+</table>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function deleteEntity(id) {
+        axios.delete('/habitacion/delete/' + id)
+            .then(function () {
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de MaquinariaExamen</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/maquinariaexamen">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/maquinariaexamen/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idExamenRealizado">
+            idExamenRealizado:
+            <input class="form-control" type="text" name="idExamenRealizado" th:value="*{idExamenRealizado}" placeholder="Ingrese el valor de idExamenRealizado">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idDispositivoMedico">
+            idDispositivoMedico:
+            <input class="form-control" type="text" name="idDispositivoMedico" th:value="*{idDispositivoMedico}" placeholder="Ingrese el valor de idDispositivoMedico">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idExamenRealizado: entityForm.idExamenRealizado.value,
+            idDispositivoMedico: entityForm.idDispositivoMedico.value,
+        }
+        axios.post('/maquinariaexamen/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

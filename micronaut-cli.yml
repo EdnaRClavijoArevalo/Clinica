@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: universitaria.edna
+---
+testFramework: junit
+sourceLanguage: java

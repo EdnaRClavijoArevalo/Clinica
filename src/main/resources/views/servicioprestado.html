@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de ServicioPrestado</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/servicioprestado/create">Crear</a>
+</section>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>IdServicio</th>
+        <th>IdPaciente</th>
+        <th>IdDoctor</th>
+        <th>IdEntidadSalud</th>
+        <th>IdTipoSeguro</th>
+    </tr>
+    </thead>
+    <th:block th:each="entity : ${entities}">
+        <tr>
+            <td th:text="${entity.id}">...</td>
+            <td th:text="${entity.idServicio}">...</td>
+            <td th:text="${entity.idPaciente}">...</td>
+            <td th:text="${entity.idDoctor}">...</td>
+            <td th:text="${entity.idEntidadSalud}">...</td>
+            <td th:text="${entity.idTipoSeguro}">...</td>
+            <td><a th:href="'/servicioprestado/details/' + ${entity.id}">Ver</a></td>
+            <td><a href="#" th:onclick="'javascript:deleteEntity(' + ${entity.id} + ')'">Borrar</a></td>
+        </tr>
+    </th:block>
+</table>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function deleteEntity(id) {
+        axios.delete('/servicioprestado/delete/' + id)
+            .then(function () {
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

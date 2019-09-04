@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de ServicioHospitalizacion</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/serviciohospitalizacion">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/serviciohospitalizacion/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idHabitacion">
+            idHabitacion:
+            <input class="form-control" type="text" name="idHabitacion" th:value="*{idHabitacion}" placeholder="Ingrese el valor de idHabitacion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="diasHospitalizacion">
+            diasHospitalizacion:
+            <input class="form-control" type="text" name="diasHospitalizacion" th:value="*{diasHospitalizacion}" placeholder="Ingrese el valor de diasHospitalizacion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idPaciente">
+            idPaciente:
+            <input class="form-control" type="text" name="idPaciente" th:value="*{idPaciente}" placeholder="Ingrese el valor de idPaciente">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idMedicoTratante">
+            idMedicoTratante:
+            <input class="form-control" type="text" name="idMedicoTratante" th:value="*{idMedicoTratante}" placeholder="Ingrese el valor de idMedicoTratante">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="valorRestaurante">
+            valorRestaurante:
+            <input class="form-control" type="text" name="valorRestaurante" th:value="*{valorRestaurante}" placeholder="Ingrese el valor de valorRestaurante">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="valorHabitacion">
+            valorHabitacion:
+            <input class="form-control" type="text" name="valorHabitacion" th:value="*{valorHabitacion}" placeholder="Ingrese el valor de valorHabitacion">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idHabitacion: entityForm.idHabitacion.value,
+            diasHospitalizacion: entityForm.diasHospitalizacion.value,
+            idPaciente: entityForm.idPaciente.value,
+            idMedicoTratante: entityForm.idMedicoTratante.value,
+            valorRestaurante: entityForm.valorRestaurante.value,
+            valorHabitacion: entityForm.valorHabitacion.value,
+        }
+        axios.post('/serviciohospitalizacion/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

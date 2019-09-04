@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Edificio</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/edificio">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/edificio/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="pisos">
+            pisos:
+            <input class="form-control" type="text" name="pisos" th:value="*{pisos}" placeholder="Ingrese el valor de pisos">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            pisos: entityForm.pisos.value,
+        }
+        axios.post('/edificio/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de HistoriaClinica</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/historiaclinica">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/historiaclinica/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idPaciente">
+            idPaciente:
+            <input class="form-control" type="text" name="idPaciente" th:value="*{idPaciente}" placeholder="Ingrese el valor de idPaciente">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="fechaCreacion">
+            fechaCreacion:
+            <input class="form-control" type="text" name="fechaCreacion" th:value="*{fechaCreacion}" placeholder="Ingrese el valor de fechaCreacion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="costoTratamiento">
+            costoTratamiento:
+            <input class="form-control" type="text" name="costoTratamiento" th:value="*{costoTratamiento}" placeholder="Ingrese el valor de costoTratamiento">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idFamiliarContacto">
+            idFamiliarContacto:
+            <input class="form-control" type="text" name="idFamiliarContacto" th:value="*{idFamiliarContacto}" placeholder="Ingrese el valor de idFamiliarContacto">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idPaciente: entityForm.idPaciente.value,
+            fechaCreacion: entityForm.fechaCreacion.value,
+            costoTratamiento: entityForm.costoTratamiento.value,
+            idFamiliarContacto: entityForm.idFamiliarContacto.value,
+        }
+        axios.post('/historiaclinica/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+micronaut:
+  io:
+    watch:
+      paths: src/main
+      restart: true
+  application:
+    name: banco
+  server:
+    port: 8086
+  router:
+    static-resources:
+      default:
+        enabled: true
+        mapping: "/public/**"
+        paths: "classpath:public"
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/clinica
+    username: root
+    password: guest
+    dbCreate: create-update
+    pooled: true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+jpa:
+  default:
+    packages-to-scan:
+      - 'universitaria.edna.domain'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true

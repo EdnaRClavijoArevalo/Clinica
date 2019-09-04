@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de ServicioHospital</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/serviciohospital">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/serviciohospital/update}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="id">
+            id:
+            <input class="form-control" type="text" name="id" th:value="*{id}" placeholder="Ingrese el valor de id" readonly>
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="nombre">
+            nombre:
+            <input class="form-control" type="text" name="nombre" th:value="*{nombre}" placeholder="Ingrese el valor de nombre">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="descripcion">
+            descripcion:
+            <input class="form-control" type="text" name="descripcion" th:value="*{descripcion}" placeholder="Ingrese el valor de descripcion">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="updateEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function updateEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            nombre: entityForm.nombre.value,
+            descripcion: entityForm.descripcion.value,
+        }
+        axios.put('/serviciohospital/update', entity)
+            .then(function () {
+                alert('Registro actualizado exitosamente')
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

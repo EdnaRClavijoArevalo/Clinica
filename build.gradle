@@ -1,0 +1,69 @@
+plugins {
+    id "net.ltgt.apt-eclipse" version "0.21"
+    id "com.github.johnrengelman.shadow" version "5.0.0"
+    id "application"
+}
+
+version "0.1"
+group "universitaria.edna"
+
+repositories {
+    mavenCentral()
+    maven { url "https://jcenter.bintray.com" }
+}
+
+configurations {
+    // for dependencies that are needed for development only
+    developmentOnly 
+}
+
+dependencies {
+    annotationProcessor "javax.persistence:javax.persistence-api:2.2"
+    annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    annotationProcessor "io.micronaut:micronaut-inject-java"
+    annotationProcessor "io.micronaut:micronaut-validation"
+    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
+    compile "io.micronaut.configuration:micronaut-hibernate-validator"
+    runtime 'org.thymeleaf:thymeleaf:3.0.11.RELEASE'
+    implementation "io.micronaut:micronaut-core:1.2.0"
+    implementation 'io.micronaut.configuration:micronaut-jdbc-hikari:1.2.0'
+    implementation 'io.micronaut.configuration:micronaut-hibernate-jpa:1.2.0'
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:7.4.1.jre8'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'8.0.17'
+    implementation "io.micronaut:micronaut-inject:1.2.0"
+    implementation "io.micronaut:micronaut-validation:1.2.0"
+    implementation "io.micronaut:micronaut-runtime:1.2.0"
+    implementation "io.micronaut:micronaut-http-server-netty:1.2.0"
+    implementation "io.micronaut:micronaut-http-client:1.2.0"
+    compile 'io.micronaut:micronaut-spring'
+    runtime 'org.springframework:spring-jdbc'
+    compile 'io.micronaut:micronaut-views'
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+    testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+    testImplementation "org.junit.jupiter:junit-jupiter-api"
+    testImplementation "io.micronaut.test:micronaut-test-junit5"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+}
+
+test.classpath += configurations.developmentOnly
+
+mainClassName = "universitaria.edna.Application"
+
+// use JUnit 5 platform
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+    options.compilerArgs.add('-parameters')
+}
+
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+run.classpath += configurations.developmentOnly
+run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote')

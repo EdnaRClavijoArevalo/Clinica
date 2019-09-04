@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de IngresoPaciente</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/ingresopaciente">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/ingresopaciente/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idHistoriaClinica">
+            idHistoriaClinica:
+            <input class="form-control" type="text" name="idHistoriaClinica" th:value="*{idHistoriaClinica}" placeholder="Ingrese el valor de idHistoriaClinica">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idDoctorTratante">
+            idDoctorTratante:
+            <input class="form-control" type="text" name="idDoctorTratante" th:value="*{idDoctorTratante}" placeholder="Ingrese el valor de idDoctorTratante">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="fechaIngreso">
+            fechaIngreso:
+            <input class="form-control" type="text" name="fechaIngreso" th:value="*{fechaIngreso}" placeholder="Ingrese el valor de fechaIngreso">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="fechaSalida">
+            fechaSalida:
+            <input class="form-control" type="text" name="fechaSalida" th:value="*{fechaSalida}" placeholder="Ingrese el valor de fechaSalida">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idHistoriaClinica: entityForm.idHistoriaClinica.value,
+            idDoctorTratante: entityForm.idDoctorTratante.value,
+            fechaIngreso: entityForm.fechaIngreso.value,
+            fechaSalida: entityForm.fechaSalida.value,
+        }
+        axios.post('/ingresopaciente/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

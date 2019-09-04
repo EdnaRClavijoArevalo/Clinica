@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de CaracteristicaPersona</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/caracteristicapersona">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/caracteristicapersona/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idPersona">
+            idPersona:
+            <input class="form-control" type="text" name="idPersona" th:value="*{idPersona}" placeholder="Ingrese el valor de idPersona">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="nombre">
+            nombre:
+            <input class="form-control" type="text" name="nombre" th:value="*{nombre}" placeholder="Ingrese el valor de nombre">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="descripcion">
+            descripcion:
+            <input class="form-control" type="text" name="descripcion" th:value="*{descripcion}" placeholder="Ingrese el valor de descripcion">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idPersona: entityForm.idPersona.value,
+            nombre: entityForm.nombre.value,
+            descripcion: entityForm.descripcion.value,
+        }
+        axios.post('/caracteristicapersona/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

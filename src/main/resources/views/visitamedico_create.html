@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de VisitaMedico</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/visitamedico">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/visitamedico/save}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="idServicioHospitalizacion">
+            idServicioHospitalizacion:
+            <input class="form-control" type="text" name="idServicioHospitalizacion" th:value="*{idServicioHospitalizacion}" placeholder="Ingrese el valor de idServicioHospitalizacion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idDoctor">
+            idDoctor:
+            <input class="form-control" type="text" name="idDoctor" th:value="*{idDoctor}" placeholder="Ingrese el valor de idDoctor">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="comentarios">
+            comentarios:
+            <input class="form-control" type="text" name="comentarios" th:value="*{comentarios}" placeholder="Ingrese el valor de comentarios">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="saveEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function saveEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            idServicioHospitalizacion: entityForm.idServicioHospitalizacion.value,
+            idDoctor: entityForm.idDoctor.value,
+            comentarios: entityForm.comentarios.value,
+        }
+        axios.post('/visitamedico/save', entity)
+            .then(function () {
+                alert('Registro creado exitosamente')
+
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

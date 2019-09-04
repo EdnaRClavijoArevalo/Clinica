@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Persona</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/persona">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/persona/update}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="id">
+            id:
+            <input class="form-control" type="text" name="id" th:value="*{id}" placeholder="Ingrese el valor de id" readonly>
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="dni">
+            dni:
+            <input class="form-control" type="text" name="dni" th:value="*{dni}" placeholder="Ingrese el valor de dni">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="nombre">
+            nombre:
+            <input class="form-control" type="text" name="nombre" th:value="*{nombre}" placeholder="Ingrese el valor de nombre">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="apellido">
+            apellido:
+            <input class="form-control" type="text" name="apellido" th:value="*{apellido}" placeholder="Ingrese el valor de apellido">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="telefono">
+            telefono:
+            <input class="form-control" type="text" name="telefono" th:value="*{telefono}" placeholder="Ingrese el valor de telefono">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="email">
+            email:
+            <input class="form-control" type="text" name="email" th:value="*{email}" placeholder="Ingrese el valor de email">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="direccion">
+            direccion:
+            <input class="form-control" type="text" name="direccion" th:value="*{direccion}" placeholder="Ingrese el valor de direccion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="idTipoPersona">
+            idTipoPersona:
+            <input class="form-control" type="text" name="idTipoPersona" th:value="*{idTipoPersona}" placeholder="Ingrese el valor de idTipoPersona">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="updateEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function updateEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            dni: entityForm.dni.value,
+            nombre: entityForm.nombre.value,
+            apellido: entityForm.apellido.value,
+            telefono: entityForm.telefono.value,
+            email: entityForm.email.value,
+            direccion: entityForm.direccion.value,
+            idTipoPersona: entityForm.idTipoPersona.value,
+        }
+        axios.put('/persona/update', entity)
+            .then(function () {
+                alert('Registro actualizado exitosamente')
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+

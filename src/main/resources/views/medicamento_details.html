@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Medicamento</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/medicamento">Volver a lista</a>
+</section>
+
+<form action="#" name="entityForm" th:action="@{/medicamento/update}" th:object="${entity}" method="post">
+<div class="form-group">
+    <p>
+        <label for="id">
+            id:
+            <input class="form-control" type="text" name="id" th:value="*{id}" placeholder="Ingrese el valor de id" readonly>
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="nombre">
+            nombre:
+            <input class="form-control" type="text" name="nombre" th:value="*{nombre}" placeholder="Ingrese el valor de nombre">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="descripcion">
+            descripcion:
+            <input class="form-control" type="text" name="descripcion" th:value="*{descripcion}" placeholder="Ingrese el valor de descripcion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="composicion">
+            composicion:
+            <input class="form-control" type="text" name="composicion" th:value="*{composicion}" placeholder="Ingrese el valor de composicion">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="referencia">
+            referencia:
+            <input class="form-control" type="text" name="referencia" th:value="*{referencia}" placeholder="Ingrese el valor de referencia">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="posologia">
+            posologia:
+            <input class="form-control" type="text" name="posologia" th:value="*{posologia}" placeholder="Ingrese el valor de posologia">
+        </label>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="fechaVencimiento">
+            fechaVencimiento:
+            <input class="form-control" type="text" name="fechaVencimiento" th:value="*{fechaVencimiento}" placeholder="Ingrese el valor de fechaVencimiento">
+        </label>
+    </p>
+</div>
+
+<p>
+    <input type="button" value="Submit" onclick="updateEntity(entityForm)"/>
+    <input type="reset" value="Reset">
+</p>
+
+</form>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+<script>
+    function updateEntity(entityForm) {
+        var entity = {
+            id: entityForm.id.value,
+            nombre: entityForm.nombre.value,
+            descripcion: entityForm.descripcion.value,
+            composicion: entityForm.composicion.value,
+            referencia: entityForm.referencia.value,
+            posologia: entityForm.posologia.value,
+            fechaVencimiento: entityForm.fechaVencimiento.value,
+        }
+        axios.put('/medicamento/update', entity)
+            .then(function () {
+                alert('Registro actualizado exitosamente')
+                location.reload()
+            }).catch(function (error) {
+                alert(error)
+            }
+        )
+    }
+</script>
+</body>
+</html>
+
