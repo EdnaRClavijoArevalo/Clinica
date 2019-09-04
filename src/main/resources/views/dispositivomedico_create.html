@@ -5,6 +5,7 @@
     <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container">
+<hr>
 <section>
     <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
     <a href="/dispositivomedico" class="btn btn-sm btn-outline-dark">Volver a lista</a>
@@ -37,7 +38,7 @@
         axios.post('/dispositivomedico/save', entity)
             .then(function () {
                 alert('Registro creado exitosamente')
-                window.location.href = "/"
+                window.location.href = "/dispositivomedico"
             }).catch(function (error) {
                 alert(error)
             }
