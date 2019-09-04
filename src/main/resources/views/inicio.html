@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todas las Tablas del Sistema</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<section>
+    <a href="/" class="btn btn-sm btn-outline-primary">Inicio</a>
+</section>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Tabla</th>
+        <th>Contenido</th>
+    </tr>
+    </thead>
+    <th:block th:each="page : ${controllers}">
+        <tr>
+            <td th:text="${page.name}">...</td>
+            <td><a th:href="${page.path}">Ver</a></td>
+        </tr>
+    </th:block>
+</table>
+<script src="/public/axios.min.js" type="application/javascript"></script>
+</body>
+</html>
+
